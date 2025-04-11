@@ -3,9 +3,9 @@ eBPF-based Network Intrusion Monitor
 
 ---
 
-## 🔥 Gambaran Singkat Proyek
+## Gambaran Singkat Proyek
 
-### 📛 Nama Proyek:
+### Nama Proyek:
 "KernelWatch: eBPF Realtime Network Intrusion Monitor"
 
 ### Latar belakang
@@ -20,7 +20,7 @@ eBPF (Extended Berkeley Packet Filter), teknologi dari kernel Linux, menawarkan 
 - Apakah eBPF dapat digunakan untuk mendeteksi aktivitas berbahaya secara real-time tanpa mengganggu performa host?
 - Bagaimana sistem dapat mengirim alert dan mencatat log aktivitas mencurigakan secara efisien?
 
-### 🎯 Tujuan:
+### Tujuan:
 - Membangun sistem monitoring jaringan real-time berbasis eBPF
 - Mendeteksi aktivitas mencurigakan seperti port scanning, DNS flood, brute-force login
 - Logging event secara efisien langsung dari kernel
@@ -28,13 +28,13 @@ eBPF (Extended Berkeley Packet Filter), teknologi dari kernel Linux, menawarkan 
 - Bisa dikembangkan jadi IDS/IPS super ringan
 
 ### Ruang Lingkup
-✅ Termasuk:
+Termasuk:
 -Pemrograman eBPF untuk event jaringan
 - Daemon pengguna (Python/Go) untuk notifikasi/log
 - Simulasi serangan (nmap, hydra, dns flood)
 - Analisis performa ringan (CPU/RAM usage)
 
-🚫 Tidak termasuk:
+Tidak termasuk:
 - Sistem Machine Learning untuk klasifikasi intrusi
 - Integrasi dengan distributed monitoring (multi-host IDS)
 
@@ -51,19 +51,19 @@ eBPF (Extended Berkeley Packet Filter), teknologi dari kernel Linux, menawarkan 
 | Evaluasi	        | Ukur akurasi deteksi, latency, dan resource usage|
 
 
-## 🔬 Hal yang Harus Diuji
+## Hal yang Harus Diuji
 | Pengujian	                          | Tujuan                                      |
 |-------------------------------------|---------------------------------------------|
-|✅ Packet capture (via eBPF)	        | Pastikan data benar ditangkap di kernel     |
-|✅ Event detection (port scan, dst)	| Validasi logika deteksi berjalan            |
-|✅ Resource usage	                  | Harus tetap ringan (low CPU/RAM)            |
-|✅ Alert accuracy	                  | Tidak false positive/negative berlebihan    |
-|✅ Integrasi alert                   | Notifikasi berhasil ke Telegram/Slack/Log   |
-|✅ Multi-host monitoring (opsional)	| Kalau deploy ke beberapa VM via agent       |
+|Packet capture (via eBPF)	        | Pastikan data benar ditangkap di kernel     |
+|Event detection (port scan, dst)	| Validasi logika deteksi berjalan            |
+|Resource usage	                  | Harus tetap ringan (low CPU/RAM)            |
+|Alert accuracy	                  | Tidak false positive/negative berlebihan    |
+|Integrasi alert                   | Notifikasi berhasil ke Telegram/Slack/Log   |
+|Multi-host monitoring (opsional)	| Kalau deploy ke beberapa VM via agent       |
 
 ---
 
-## 🛠️ Skill yang Relevan
+## Skill yang Relevan
 |Skill	                                       | Level yang Dibutuhkan |
 |----------------------------------------------|-----------------------|
 |Linux & Networking (iptables, netstat, TCP/IP)|	Menengah–Lanjut      |
@@ -75,7 +75,7 @@ eBPF (Extended Berkeley Packet Filter), teknologi dari kernel Linux, menawarkan 
 
 ---
 
-## 🕸️ Possible Topology (Simplified)
+## Possible Topology (Simplified)
 
        ┌────────────┐
        │  Attacker  │
@@ -90,7 +90,7 @@ eBPF (Extended Berkeley Packet Filter), teknologi dari kernel Linux, menawarkan 
      │  Backend   │ (bisa SSH, DNS, Web)
      └────────────┘
 
-### 📦 Komponen:
+### Komponen:
 - eBPF agent → menangkap & proses event
 - Python/Go daemon → handle event & kirim notifikasi
 - Grafana/Prometheus/SQLite (opsional) → dashboard visualisasi
@@ -98,7 +98,7 @@ eBPF (Extended Berkeley Packet Filter), teknologi dari kernel Linux, menawarkan 
 
 ---
 
-## 🧱 State Awal Proyek
+## State Awal Proyek
 
 - Target OS: Ubuntu 22.04 (host/VM)
 - Tools utama:
@@ -111,7 +111,7 @@ eBPF (Extended Berkeley Packet Filter), teknologi dari kernel Linux, menawarkan 
 
 ---
 
-## 🗂️ Struktur Folder & File Awal
+## Struktur Folder & File Awal
 
 ```
 kernelwatch/
@@ -146,7 +146,7 @@ kernelwatch/
 └── requirements.txt           # Dependensi Python (bcc, requests, dll)
 ```
 
-### 📌 Penjelasan Cepat
+### Penjelasan Cepat
 |Folder / File  |	Fungsi                                                                |
 |---------------|-----------------------------------------------------------------------|
 |ebpf/	        | Tempat program eBPF yang akan dikompilasi & attach ke kernel          |
@@ -159,7 +159,7 @@ kernelwatch/
 
 ---
 
-## 📚 Penelitian/Proyek Sejenis (Relevan)
+## Penelitian/Proyek Sejenis (Relevan)
 Judul Proyek / Paper:
 - A Real-time Intrusion Detection System using eBPF and XDP
 - Design and Implementation of Lightweight IDS Using eBPF
@@ -169,7 +169,7 @@ Judul Proyek / Paper:
 
 ---
 
-## 🧠 Plus: Potensi Pengembangan
+## Plus: Potensi Pengembangan
 | Fitur Lanjutan	                 | Value Tambahan                          |
 |----------------------------------|-----------------------------------------|
 |ML for anomaly detection	         | Buat auto-learning IDS (AI-powered)     |
@@ -182,9 +182,9 @@ Judul Proyek / Paper:
 
 ---
 
-## 🎯 Strategi Eksekusi Proyek
+## Strategi Eksekusi Proyek
 
-### ✅ 1. Fokus ke Rencana Awal (MVP / Minimum Viable Product)
+### 1. Fokus ke Rencana Awal (MVP / Minimum Viable Product)
 Ini tahap buat ngebuktiin sistemnya kerja, sekecil apapun. Termasuk:
 - Menulis 1 eBPF program (misal: deteksi port scan)
 - Bikin agent Python yang baca event
@@ -196,7 +196,7 @@ Tujuannya:
 🔹 Bisa kamu tunjukin ke dosen/pembimbing sebagai "proyek udah jalan"
 🔹 Dasar untuk pengembangan selanjutnya
 
-### 🧠 2. Pengembangan Bertahap (Versi Pro)
+### 2. Pengembangan Bertahap (Versi Pro)
 Setelah dasar beres & stabil, kamu bisa mulai tambah fitur keren yang:
 - Bikin proyek kamu beda dari yang lain
 - Tambah nilai akademis & teknisnya
@@ -215,7 +215,7 @@ MVP
 
 --- 
 
-## 🛠️ Jadi, Step Awal :
+## Jadi, Step Awal :
 - Setup environment --> Ubuntu VM, install BCC, Python deps
 - Bikin eBPF script basic --> Misalnya: tangkap koneksi TCP ke banyak port dalam 3 detik
 - Bikin Python agent --> Baca hasil dari eBPF, simpen ke file
@@ -225,37 +225,37 @@ MVP
 
 ## KERNELWATCH: Technical To-Do List
 
-### 🔧 Setup & Persiapan Awal
+### Setup & Persiapan Awal
 - [ ] Install Ubuntu 22.04 (bare-metal / VM / WSL2)
 - [ ] Install dependency: `bcc`, `bpftool`, `python3`, `pip`, `net-tools`
 - [ ] Setup folder struktur proyek (`kernelwatch/` + subfolder)
 - [ ] Buat virtualenv Python (opsional)
 - [ ] Install Python package: `bcc`, `pyyaml`, `requests`
 
-### 🧪 Simulasi Serangan (Untuk Testing)
+### Simulasi Serangan (Untuk Testing)
 - [ ] Install `nmap`, `hydra`, `hping3`
 - [ ] Buat script `scripts/attack_sim.sh` untuk otomatisasi tes
 - [ ] Jalankan basic `nmap` scan ke host target
 
-### 🐝 eBPF Program (MVP)
+### eBPF Program (MVP)
 - [ ] Buat file `ebpf/portscan_monitor.c`
 - [ ] Tulis eBPF XDP/BCC program untuk capture koneksi TCP SYN
 - [ ] Tambah threshold basic: >5 koneksi ke port berbeda dalam 3 detik = suspicious
 - [ ] Compile & attach eBPF ke interface (via BCC/Python)
 
-### 🐍 Python User-Space Agent
+### Python User-Space Agent
 - [ ] Buat file `agent/main.py` untuk baca event dari eBPF
 - [ ] Buat file `agent/alert.py` untuk logging + (opsional) Telegram alert
 - [ ] Tambahkan basic `config.yaml` (interface, alert toggle, dst)
 - [ ] Tambah sistem log ke `data/event_log.jsonl`
 - [ ] Tambahkan console print ketika ada aktivitas mencurigakan
 
-### 🧪 Testing MVP
+### Testing MVP
 - [ ] Jalankan script `attack_sim.sh` → amati output eBPF + log
 - [ ] Cek apakah port scan terdeteksi dengan benar
 - [ ] Coba tuning threshold detection & delay
 
-### 🧠 Pengembangan Tahap 2 (Optional/Future)
+### Pengembangan Tahap 2 (Optional/Future)
 - [ ] Deteksi DNS flood atau brute-force SSH
 - [ ] Integrasi notifikasi Telegram/email
 - [ ] Export log ke SQLite atau Prometheus
@@ -264,7 +264,7 @@ MVP
 - [ ] Rancang integrasi dengan SIEM (via syslog atau API)
 - [ ] Tambah basic anomaly detection (ML, time pattern)
 
-### 📚 Dokumentasi
+### Dokumentasi
 - [ ] Buat `README.md` isi overview proyek
 - [ ] Tambahkan arsitektur diagram ke `docs/`
 - [ ] Buat log harian/tahapan di `docs/dev-log.md`
