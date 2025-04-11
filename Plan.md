@@ -29,7 +29,7 @@ eBPF (Extended Berkeley Packet Filter), teknologi dari kernel Linux, menawarkan 
 
 ### Ruang Lingkup
 Termasuk:
--Pemrograman eBPF untuk event jaringan
+- Pemrograman eBPF untuk event jaringan
 - Daemon pengguna (Python/Go) untuk notifikasi/log
 - Simulasi serangan (nmap, hydra, dns flood)
 - Analisis performa ringan (CPU/RAM usage)
